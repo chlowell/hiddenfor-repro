@@ -1,0 +1,8 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@model Repro.Model
+
+<h1>Input tag helper works as expected:</h1>
+<input asp-for="@Model.Property" name="replacement name" type="hidden">
+
+<h1>Html.HiddenFor does not:</h1>
+@Html.HiddenFor(m => m.Property, htmlAttributes: new { Name="replacement name" })
